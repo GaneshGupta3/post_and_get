@@ -2,3 +2,11 @@
     background-color:khaki;
     color: red ;
 }
+
+span{
+    width:80%;
+}
+
+.button{
+    float: right;
+}
