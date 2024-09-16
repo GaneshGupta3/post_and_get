@@ -17,6 +17,8 @@ function App() {
       todoDate: "4/10/2023",
     },
   ]);
+  
+
 
   function formatDate(date) {
     let newDate = new Date(date);
@@ -68,8 +70,11 @@ function App() {
     );
     console.log(deletedItem);
     if(deletedItem===null){
-      return;
+      return null;
     }
+
+    alert(`deleted the task "${deletedItem.todoName}" that was to be completed on the date of "${deletedItem.todoDate}"`)
+
     setTodoItems(()=>
       todoItems.filter(
         (item) => item.todoDate !== todoDate || item.todoName != todoName
