@@ -1,3 +1,3 @@
 import { createContext } from "react";
 
-export const TodoItemsContext = createContext({ todoItems : [], addTodo: ()=>{}, deleteTodo: ()=>{} });{/* for auto suggestion*/}
+export const TodoItemsContext = createContext({ todoItems : [], addTodo: ()=>{}, confirmDeleteTodo: ()=>{} });{/* for auto suggestion*/}

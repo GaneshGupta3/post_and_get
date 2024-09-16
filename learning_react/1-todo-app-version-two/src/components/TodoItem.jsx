@@ -4,7 +4,7 @@ import { TodoItemsContext } from "../store/todo_items_store";
 import { useContext } from "react";
 
 function TodoItem({ todoName, todoDate }) {
-  const {deleteTodo} = useContext(TodoItemsContext);
+  const {confirmDeleteTodo} = useContext(TodoItemsContext);
 
   return (
     <div className="container">
@@ -12,7 +12,7 @@ function TodoItem({ todoName, todoDate }) {
         <div className="col-6">{todoName}</div>
         <div className="col-4">{todoDate}</div>
         <div className="col-2">
-          <button type="button" className={"btn btn-danger "+styles.kgButton} onClick={()=>deleteTodo(todoDate,todoName)}>
+          <button type="button" className={"btn btn-danger "+styles.kgButton} onClick={()=>confirmDeleteTodo(todoName,todoDate)}>
             <RiDeleteBin5Fill/>
           </button>
         </div>

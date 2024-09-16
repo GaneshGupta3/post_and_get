@@ -43,7 +43,7 @@ function App() {
   function addTodo(todoName, todoDate) {
     console.log(todoName, todoDate);
     if (todoDate == null || todoName == null) {
-      return;
+      return null;
     } else {
       setTodoItems((currVal) => {
         return [
@@ -57,22 +57,37 @@ function App() {
     }
   }
 
-  function deleteTodo(todoDate, todoName) {
+  function deleteTodo(todoName, todoDate) {
     let deleteData = {
       todoName: todoName,
       todoDate: todoDate,
     };
     console.log(deleteData);
-    setTodoItems(
+    const deletedItem = todoItems.find(
+      (item) => item.todoDate === todoDate && item.todoName === todoName
+    );
+    console.log(deletedItem);
+    if(deletedItem===null){
+      return;
+    }
+    setTodoItems(()=>
       todoItems.filter(
         (item) => item.todoDate !== todoDate || item.todoName != todoName
       )
     );
   }
 
+  function confirmDeleteTodo(todoName,todoDate){
+    const confirmation = confirm(`do you want to delete todo with name:${todoName} and on date : ${todoDate}`);
+    console.log(confirmation);
+    if(confirmation) {
+      deleteTodo(todoName,todoDate);
+    }
+  }
+
   return (
     <TodoItemsContext.Provider
-      value={{ todoItems, addTodo, deleteTodo }}
+      value={{ todoItems, addTodo, confirmDeleteTodo }}
     >
       
       {/*we pass the state elements to the context provider so that we can repaint on the change of it*/}
