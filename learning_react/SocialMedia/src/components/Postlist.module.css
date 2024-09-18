@@ -1,0 +1,11 @@
+.Postlist{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin: 10px;
+}
+
+.cardStyle{
+    margin: 20px;
+    max-height: 200px; 
+}
