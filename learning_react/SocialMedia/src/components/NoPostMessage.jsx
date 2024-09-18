@@ -1,5 +1,3 @@
-
-
 const NoPostMessage = () => {
 
   return (
