@@ -20,22 +20,27 @@ const CreatePost = () => {
     const month = currentDate.getMonth() + 1; // Months are zero-indexed, so add 1
     const year = currentDate.getFullYear(); // Get the full year
     const formattedDate = day + "/" + month + "/" + year;
-    const postTags = postTagsElement.current.value.split(" "); 
+    const postTags = postTagsElement.current.value.split(" ");
 
-    addPost(userID, postTitle, postBody, formattedDate,postTags);
+    addPost(userID, postTitle, postBody, formattedDate, postTags);
+
     
-    userIDElement.current.value = "";
+
+    /*userIDElement.current.value = "";
+    /*userIDElement.current.value = "";
     postTitleElement.current.value = "";
     postBodyElement.current.value = "";
-    postTagsElement.current.value = "";
+    postTagsElement.current.value = "";*/
   };
 
   return (
     <>
       <div className={styles.postMaker}>
-        <form onSubmit={(event)=>{
-          handleSubmit(event)
-        }}>
+        <form
+          onSubmit={(event) => {
+            handleSubmit(event);
+          }}
+        >
           <div className="mb-3">
             <label htmlFor="userID" className="form-label">
               User-ID
@@ -86,10 +91,7 @@ const CreatePost = () => {
               ref={postTagsElement}
             />
           </div>
-          <button
-            type="submit"
-            className="btn btn-primary"
-          >
+          <button type="submit" className="btn btn-primary">
             Post
           </button>
         </form>

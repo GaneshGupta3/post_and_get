@@ -37,7 +37,9 @@ const postListReducer = (currPostList, action) => {
 };
 
 const PostListProvider = ({ children }) => {
+
   const [postList, dispatchPostList] = useReducer(postListReducer, []);
+  
   const addPost = (userID, postTitle, postBody, formattedDate, postTags) => {
     dispatchPostList({
       type: "ADD_POST",
@@ -52,6 +54,7 @@ const PostListProvider = ({ children }) => {
       },
     });
   };
+
   const addPosts = (posts) => {
     dispatchPostList({
       type: "ADD_POSTS",
@@ -60,6 +63,7 @@ const PostListProvider = ({ children }) => {
       },
     });
   };
+  
   const deletePost = (postID) => {
     dispatchPostList({
       type: "DEL_POST",

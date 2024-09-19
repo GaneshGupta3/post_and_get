@@ -24,11 +24,11 @@ const Postlist = () => {
         console.log("fetch returned!");
         setFetching(false);
       });
+    console.log("fetching finished!");
     return ()=>{
       controller.abort();
       console.log("aborted")
     }
-    console.log("fetching finished!");
   }, []);
 
   return (
